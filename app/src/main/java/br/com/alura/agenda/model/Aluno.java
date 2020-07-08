@@ -14,6 +14,10 @@ public class Aluno {
         this.email = email;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
     @NonNull
     @Override
     public String toString() {return nome;}

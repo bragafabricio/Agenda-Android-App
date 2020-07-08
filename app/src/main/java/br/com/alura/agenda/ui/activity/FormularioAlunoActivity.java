@@ -1,12 +1,10 @@
 package br.com.alura.agenda.ui.activity;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import br.com.alura.agenda.R;
 import br.com.alura.agenda.dao.AlunoDAO;
@@ -18,6 +16,8 @@ public class FormularioAlunoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formulario_aluno);
+
+        setTitle("Novo aluno");
 
         final AlunoDAO dao = new AlunoDAO();
 
@@ -37,7 +37,7 @@ public class FormularioAlunoActivity extends AppCompatActivity {
                 dao.salva(alunoCriado);
 
 
-                startActivity(new Intent(FormularioAlunoActivity.this, ListaAlunosActivity.class));
+                finish();
             }
         });
     }

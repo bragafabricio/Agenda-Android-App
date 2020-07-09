@@ -15,12 +15,12 @@ public class AlunoDAO {
 
     public List<Aluno> todos() {
         List<Aluno> listaOrdenada = new ArrayList<>(alunos);
-        OrdenaLista(listaOrdenada);
+        ordenaLista(listaOrdenada);
         return listaOrdenada;
 
     }
 
-    private void OrdenaLista(List<Aluno> lista) {
+    private void ordenaLista(List<Aluno> lista) {
         Collections.sort(lista, new Comparator<Aluno>() {
             @Override
             public int compare(Aluno o1, Aluno o2) {

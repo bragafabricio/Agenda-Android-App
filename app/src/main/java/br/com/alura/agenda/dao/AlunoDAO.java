@@ -24,11 +24,11 @@ public class AlunoDAO {
         contadorDeIds++;
     }
 
-    public void edita(Aluno aluno){
+    public void edita(Aluno aluno) {
         Aluno alunoEncontrado = buscaAlunoPeloId(aluno);
         if (alunoEncontrado != null) {
             int posicaoDoAluno = alunos.indexOf(alunoEncontrado);
-            alunos.set (posicaoDoAluno, aluno);
+            alunos.set(posicaoDoAluno, aluno);
 
         }
     }
@@ -57,5 +57,12 @@ public class AlunoDAO {
                 return o1.getNome().compareTo(o2.getNome());
             }
         });
+    }
+
+    public void remove(Aluno aluno) {
+        Aluno alunoDevolvido = buscaAlunoPeloId(aluno);
+        if (alunoDevolvido != null) {
+            alunos.remove(alunoDevolvido);
+        }
     }
 }
